@@ -20,3 +20,6 @@ https://jangafx.com/software/embergen/download/free-vdb-animations/
 
 ## SDF Baker - Without Distance Gradient
 https://github.com/xraxra/SDFr
+
+## FGA Importer (.FGA to .VF)
+https://github.com/the40san/FGAImporter
