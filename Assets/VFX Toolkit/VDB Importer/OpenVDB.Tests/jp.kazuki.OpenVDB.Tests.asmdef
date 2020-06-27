@@ -1,0 +1,16 @@
+{
+    "name": "jp.kazuki.OpenVDB.Tests",
+    "references": [
+        "jp.kazuki.OpenVDB",
+        "jp.kazuki.OpenVDB.PackageBuild",
+        "jp.kazuki.OpenVDB.Editor"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
