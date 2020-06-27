@@ -28,5 +28,7 @@ https://github.com/the40san/FGAImporter
 ## Vector Field Generator
 https://assetstore.unity.com/packages/tools/particles-effects/vector-field-maker-lite-141215
 
+Do Not Change/Rename/Move Folder Vector Field
+
 ## Mesh Combiner  - For Point Cache
 https://assetstore.unity.com/packages/tools/modeling/same-material-static-mesh-combiner-139565
