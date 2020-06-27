@@ -7,6 +7,7 @@ Require
 - Brust
 - Visual Effect Graph
 - Post Processing
+- FBX Exporter - for Point Cache
 
 ## .VDB importer
 https://www.openvdb.org/
@@ -23,3 +24,9 @@ https://github.com/xraxra/SDFr
 
 ## FGA Importer (.FGA to .VF)
 https://github.com/the40san/FGAImporter
+
+## Vector Field Generator
+https://assetstore.unity.com/packages/tools/particles-effects/vector-field-maker-lite-141215
+
+## Mesh Combiner  - For Point Cache
+https://assetstore.unity.com/packages/tools/modeling/same-material-static-mesh-combiner-139565
