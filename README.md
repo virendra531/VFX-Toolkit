@@ -4,7 +4,7 @@ Collection of Visual Effect Graph Toolkit
 Require
 - Universal Render Pipeline
 - Mathematics
-- Brust
+- Burst
 - Visual Effect Graph
 - Post Processing
 - FBX Exporter - for Point Cache
