@@ -4,7 +4,7 @@ Collection of Visual Effect Graph Toolkit
 Require
 - Universal Render Pipeline
 - Mathematics
-- Brust
+- Burst
 - Visual Effect Graph
 - Post Processing
 - FBX Exporter - for Point Cache
@@ -21,6 +21,9 @@ https://jangafx.com/software/embergen/download/free-vdb-animations/
 
 ## SDF Baker - Without Distance Gradient
 https://github.com/xraxra/SDFr
+
+## DFVolume  SDF Baker - With Distance Gradient
+https://github.com/keijiro/DFVolume
 
 ## FGA Importer (.FGA to .VF)
 https://github.com/the40san/FGAImporter
