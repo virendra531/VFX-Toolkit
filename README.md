@@ -32,3 +32,6 @@ Do Not Change/Rename/Move Folder Vector Field
 
 ## Mesh Combiner  - For Point Cache
 https://assetstore.unity.com/packages/tools/modeling/same-material-static-mesh-combiner-139565
+
+## Texture3d Preview
+https://github.com/raphael-ernaelsten/Texture3DPreview-for-Unity
