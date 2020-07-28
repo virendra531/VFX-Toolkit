@@ -4,10 +4,11 @@ Collection of Visual Effect Graph Toolkit
 Require
 - Universal Render Pipeline
 - Mathematics
-- Burst
+- Burst - for SDF Baker
 - Visual Effect Graph
 - Post Processing
 - FBX Exporter - for Point Cache
+- Test Framework - for .VDB importer
 
 ## .VDB importer
 https://www.openvdb.org/
