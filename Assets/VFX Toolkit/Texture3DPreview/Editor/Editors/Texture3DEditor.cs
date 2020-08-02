@@ -159,6 +159,8 @@ public class Texture3DEditor : Editor
         {
             GUI.DrawTexture(rect, ((Texture3D)serializedObject.targetObject).RenderTexture3DPreview(rect, EditorStyles.helpBox, _cameraAngle, 6.5f /*TODO : Find distance with fov and boundingsphere, when non uniform size will be supported*/, _samplingIterations, _density), ScaleMode.StretchToFill, true);
         }
+        
+        EditorGUILayout.LabelField($"{texture3D.width}x{texture3D.height}x{texture3D.depth} {texture3D.format.ToString()}");
     }
 
     /// <summary>
