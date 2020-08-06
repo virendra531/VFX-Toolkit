@@ -41,7 +41,7 @@ public class Texture3DEditor : Editor
     // Plain Texture
     protected SerializedProperty m_WrapU;
     protected SerializedProperty m_WrapV;
-    protected SerializedProperty m_WrapW;   
+    protected SerializedProperty m_WrapW;
     protected SerializedProperty m_FilterMode;
     protected SerializedProperty m_Aniso;
     public readonly string wrapModeText = "Wrap Mode";
@@ -51,12 +51,12 @@ public class Texture3DEditor : Editor
     public readonly string filterModeText = "Filter Mode";
     public readonly string anisoLevelText = "Aniso Level";
 
-    public readonly string[] wrapModeContents = { "Repeat","Clamp","Mirror","Mirror Once","Per-axis"};
-    public readonly string[] wrapModeValues = { "Repeat","Clamp","Mirror","Mirror Once"};
-    public readonly string[] filterModeValues = { "Point","Bilinear","Trilinear"};
+    public readonly string[] wrapModeContents = { "Repeat", "Clamp", "Mirror", "Mirror Once", "Per-axis" };
+    public readonly string[] wrapModeValues = { "Repeat", "Clamp", "Mirror", "Mirror Once" };
+    public readonly string[] filterModeValues = { "Point", "Bilinear", "Trilinear" };
     public void InitializeVariable()
     {
-        if(m_WrapU != null) return;
+        if (m_WrapU != null) return;
 
         m_WrapU = serializedObject.FindProperty("m_TextureSettings.m_WrapU");
         m_WrapV = serializedObject.FindProperty("m_TextureSettings.m_WrapV");
@@ -74,8 +74,8 @@ public class Texture3DEditor : Editor
     {
         serializedObject.Update();
 
-        //// Had to disable the default Inspector as it makes preview lag
-        // DrawDefaultInspector();
+        // Had to disable the default Inspector as it makes preview lag
+        DrawDefaultInspector();
 
         InitializeVariable();
         DoWrapModePopup();
@@ -91,12 +91,14 @@ public class Texture3DEditor : Editor
         int newIndex = EditorGUILayout.Popup(wrapModeText, FindIndex(), wrapModeContents, EditorStyles.popup);
         enableWrapModePerAxis = newIndex == 4 ? true : false;
 
-        if(newIndex == 4 || enableWrapModePerAxis)
+        if (newIndex == 4 || enableWrapModePerAxis)
         {
             m_WrapU.intValue = EditorGUILayout.Popup(wrapUText, m_WrapU.intValue, wrapModeValues, EditorStyles.popup);
             m_WrapV.intValue = EditorGUILayout.Popup(wrapVText, m_WrapV.intValue, wrapModeValues, EditorStyles.popup);
             m_WrapW.intValue = EditorGUILayout.Popup(wrapWText, m_WrapW.intValue, wrapModeValues, EditorStyles.popup);
-        }else{
+        }
+        else
+        {
             m_WrapU.intValue = newIndex;
             m_WrapV.intValue = newIndex;
             m_WrapW.intValue = newIndex;
@@ -109,12 +111,12 @@ public class Texture3DEditor : Editor
 
     private void DoAnisoLevelSlider()
     {
-        EditorGUILayout.IntSlider (m_Aniso, 0, 16, anisoLevelText);
+        EditorGUILayout.IntSlider(m_Aniso, 0, 16, anisoLevelText);
     }
 
     private int FindIndex()
     {
-        if(m_WrapU.intValue == m_WrapV.intValue && m_WrapU.intValue == m_WrapW.intValue && !enableWrapModePerAxis)
+        if (m_WrapU.intValue == m_WrapV.intValue && m_WrapU.intValue == m_WrapW.intValue && !enableWrapModePerAxis)
             return m_WrapU.intValue;
         else
             return 4;
@@ -155,12 +157,15 @@ public class Texture3DEditor : Editor
     {
         _cameraAngle = PreviewRenderUtilityHelpers.DragToAngles(_cameraAngle, rect);
 
+        Texture3D texture3D = (Texture3D)serializedObject.targetObject;
+
         if (Event.current.type == EventType.Repaint)
         {
-            GUI.DrawTexture(rect, ((Texture3D)serializedObject.targetObject).RenderTexture3DPreview(rect, EditorStyles.helpBox, _cameraAngle, 6.5f /*TODO : Find distance with fov and boundingsphere, when non uniform size will be supported*/, _samplingIterations, _density), ScaleMode.StretchToFill, true);
+            GUI.DrawTexture(rect, texture3D.RenderTexture3DPreview(rect, EditorStyles.helpBox, _cameraAngle, 6.5f /*TODO : Find distance with fov and boundingsphere, when non uniform size will be supported*/, _samplingIterations, _density), ScaleMode.StretchToFill, true);
         }
-        
-        EditorGUILayout.LabelField($"{texture3D.width}x{texture3D.height}x{texture3D.depth} {texture3D.format.ToString()}");
+
+        if (texture3D != null)
+            EditorGUILayout.LabelField($"{texture3D.width}x{texture3D.height}x{texture3D.depth} {texture3D.format.ToString()}");
     }
 
     /// <summary>
